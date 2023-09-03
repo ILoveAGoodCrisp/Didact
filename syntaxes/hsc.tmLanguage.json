@@ -3,27 +3,123 @@
 	"name": "Midnight HaloScript",
 	"patterns": [
 		{
-			"include": "#keywords"
+			"include": "#comment"
 		},
 		{
-			"include": "#strings"
+			"include": "#expression"
 		}
 	],
 	"repository": {
-		"keywords": {
+		"comment": {
 			"patterns": [{
-				"name": "keyword.control.hsc",
-				"match": "\\b(if|while|for|return)\\b"
+				"name": "comment.line.hsc",
+				"begin": "//",
+				"end": "\n",
+				"captures": {
+					"0":{
+						"name": "comment.line.hsc"
+					}
+				}
 			}]
 		},
-		"strings": {
-			"name": "string.quoted.double.hsc",
-			"begin": "\"",
-			"end": "\"",
+		"expression": {
 			"patterns": [
 				{
-					"name": "constant.character.escape.hsc",
-					"match": "\\\\."
+					"include": "#strings"
+				},
+				{
+					"include": "#declarations"
+				},
+				{
+					"include": "#scripts"
+				},
+				{
+					"include": "#types"
+				},
+				{
+					"include": "#functions"
+				},
+				{
+					"include": "#controls"
+				},
+				{
+					"include": "#operators"
+				},
+				{
+					"include": "#numbers"
+				},
+				{
+					"include": "#enums"
+				},
+				{
+					"include": "#globals"
+				}
+			]
+		},
+		"strings":{
+			"patterns": [
+				{
+					"name": "string.quoted.double.hsc",
+					"begin": "\"",
+					"end": "\""
+
+				}
+			]
+		},
+		"declarations":{
+			"patterns": [
+				{
+					"name": "entity.name.class.hsc",
+					"match":"^[ \\t]*(script|global|local)\\b"
+
+				}
+			]
+		},
+		"scripts":{
+			"patterns": [
+				{
+					"name":"entity.name.tag.hsc",
+					"match": "(?<=script\\s*)\\b(continuous|command_script|dormant|startup|static|stub)\\b"
+				}
+			]
+		},
+		"types":{
+			"patterns": [
+				{
+					"name":"storage.type.hsc",
+					"match": "\\b(unparsed|special_form|function_name|passthrough|void|boolean|real|short|long|string|script|string_id|unit_seat_mapping|trigger_volume|cutscene_flag|cutscene_camera_point|cutscene_title|cutscene_recording|device_group|ai|ai_command_list|ai_command_script|ai_behavior|ai_orders|ai_line|starting_profile|conversation|zone_set|designer_zone|point_reference|style|object_list|folder|sound|effect|damage|looping_sound|animation_graph|damage_effect|object_definition|bitmap|shader|render_model|structure_definition|lightmap_definition|cinematic_definition|cinematic_scene_definition|bink_definition|any_tag|any_tag_not_resolving|game_difficulty|team|mp_team|controller|button_preset|joystick_preset|player_color|player_character_type|voice_output_setting|voice_mask|subtitle_setting|actor_type|model_state|event|character_physics|object|unit|vehicle|weapon|device|scenery|effect_scenery|object_name|unit_name|vehicle_name|weapon_name|device_name|scenery_name|effect_scenery_name|cinematic_lightprobe|animation_budget_reference|looping_sound_budget_reference|sound_budget_reference)\\b"
+				}
+			]
+		},
+		"functions":{
+			"patterns": [
+				{
+					"name":"entity.name.function.hsc",
+					"match": "\\w+\\s*(?=\\()"
+				}
+			]
+		},
+		"controls":{
+			"patterns": [
+				{
+					"name":"keyword.control.hsc",
+					"match": "\\b(debug|editor|false|true|max|min|if|cond|set|set_silently|and|or|not|begin|begin_random|begin_count|begin_random_count|then|else|elseif|repeat|end|until)\\b"
+				}
+			]
+		},
+		"operators":{
+			"patterns": [
+				{
+					"name":"keyword.control.hsc",
+					"match": "\\b(debug|editor|false|true|max|min|if|cond|set|set_silently|and|or|not|begin|begin_random|begin_count|begin_random_count|then|else|elseif|repeat|end|until)\\b"
+				}
+			]
+		},
+		"numbers":{
+			"patterns": [
+				{
+					"name":"constant.numeric",
+					"match": "(?i)\\b(?:true|false|\\d+(?:\\.\\d+)?)\\b"
 				}
 			]
 		}
