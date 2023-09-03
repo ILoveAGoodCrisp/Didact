@@ -1,0 +1,25 @@
+{
+    "name": "hsc",
+    "displayName": "Didact",
+    "description": "Language support for new style HaloScript",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.81.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "hsc",
+            "aliases": ["Midnight HaloScript", "hsc"],
+            "extensions": [".hsc"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "hsc",
+            "scopeName": "source.hsc",
+            "path": "./syntaxes/hsc.tmLanguage.json"
+        }]
+    }
+}
