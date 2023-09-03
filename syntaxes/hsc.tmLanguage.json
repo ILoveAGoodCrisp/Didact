@@ -37,9 +37,6 @@
 					"include": "#types"
 				},
 				{
-					"include": "#functions"
-				},
-				{
 					"include": "#controls"
 				},
 				{
@@ -53,6 +50,9 @@
 				},
 				{
 					"include": "#globals"
+				},
+				{
+					"include": "#functions"
 				}
 			]
 		},
@@ -91,27 +91,19 @@
 				}
 			]
 		},
-		"functions":{
-			"patterns": [
-				{
-					"name":"entity.name.function.hsc",
-					"match": "\\w+\\s*(?=\\()"
-				}
-			]
-		},
 		"controls":{
 			"patterns": [
 				{
 					"name":"keyword.control.hsc",
-					"match": "\\b(debug|editor|false|true|max|min|if|cond|set|set_silently|and|or|not|begin|begin_random|begin_count|begin_random_count|then|else|elseif|repeat|end|until)\\b"
+					"match": "\\b(if|begin|begin_random|begin_count|begin_random_count|then|else|elseif|repeat|end|until)\\b"
 				}
 			]
 		},
 		"operators":{
 			"patterns": [
 				{
-					"name":"keyword.control.hsc",
-					"match": "\\b(debug|editor|false|true|max|min|if|cond|set|set_silently|and|or|not|begin|begin_random|begin_count|begin_random_count|then|else|elseif|repeat|end|until)\\b"
+					"name":"keyword.operator.hsc",
+					"match": "(\\!=|\\*|\\+|\\-|/|%|\\<|\\<=|=|\\>|\\>=|==|\\b(and|or|not)\\b)"
 				}
 			]
 		},
@@ -120,6 +112,14 @@
 				{
 					"name":"constant.numeric",
 					"match": "(?i)\\b(?:true|false|\\d+(?:\\.\\d+)?)\\b"
+				}
+			]
+		},
+		"functions":{
+			"patterns": [
+				{
+					"name":"entity.name.function.hsc",
+					"match": "\\w+\\s*(?=\\()"
 				}
 			]
 		}
