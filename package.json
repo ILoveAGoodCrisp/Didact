@@ -9,17 +9,47 @@
     "categories": [
         "Programming Languages"
     ],
+
+    "main": "./out/extension",
     "contributes": {
-        "languages": [{
-            "id": "hsc",
-            "aliases": ["Midnight HaloScript", "hsc"],
-            "extensions": [".hsc"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "hsc",
-            "scopeName": "source.hsc",
-            "path": "./syntaxes/hsc.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "hsc",
+                "aliases": [
+                    "HaloScript (Didact)",
+                    "hsc"
+                ],
+                "extensions": [
+                    ".hsc"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "hsc",
+                "scopeName": "source.hsc",
+                "path": "./syntaxes/hsc.tmLanguage.json"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "lint": "eslint \"src/**/*.ts\"",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "@types/node": "^16.18.34",
+        "@types/vscode": "^1.73.0",
+        "@typescript-eslint/eslint-plugin": "^5.42.0",
+        "@typescript-eslint/parser": "^5.42.0",
+        "eslint": "^8.26.0",
+        "typescript": "^5.2.2"
+    },
+    "dependencies": {
+        "vscode": "^1.1.37",
+        "vscode-languageserver": "^8.1.0",
+        "vscode-languageserver-textdocument": "^1.0.8"
     }
 }
