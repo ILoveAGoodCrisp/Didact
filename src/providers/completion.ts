@@ -26,11 +26,24 @@ export class hsProvider {
 	provideCompletionItems(document: vscode.TextDocument,
 		position: vscode.Position,
 		token: vscode.CancellationToken,
-		context: vscode.CompletionContext): Thenable<vscode.CompletionItem[]> | vscode.CompletionItem[] {
-		return new Promise<vscode.CompletionItem[]>((resolve, reject) => {
-			let funcItems: vscode.CompletionItem[] = [];
-			resolve(this.functions.concat(funcItems));
-			reject(null);
-		});
-	}
-}
+		context: vscode.CompletionContext
+		): Thenable<vscode.CompletionItem[]> | vscode.CompletionItem[] {
+			return new Promise<vscode.CompletionItem[]>((resolve, reject) => {
+				// Get the text of the current line
+				const currentLine = vscode.window.activeTextEditor?.document.lineAt(position.line).text.trim();
+		
+				// Check if the line starts with "script," "global," or "local" (case insensitive)
+				if (
+					currentLine &&
+					/^(script|global|local)\b/i.test(currentLine)
+				) {
+					// If the line starts with any of these keywords, return an empty array
+					resolve([]);
+				} else {
+					// Otherwise, provide completion items as usual
+					let funcItems: vscode.CompletionItem[] = [];
+					resolve(this.functions.concat(funcItems));
+				}
+			});
+		}
+	}		

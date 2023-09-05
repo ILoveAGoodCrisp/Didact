@@ -10,17 +10,29 @@
 		}
 	],
 	"repository": {
-		"comment": {
-			"patterns": [{
-				"name": "comment.line.hsc",
-				"begin": "//",
-				"end": "\n",
-				"captures": {
-					"0":{
-						"name": "comment.line.hsc"
+		"comment":{
+			"patterns": [
+				{
+					"name": "comment.block",
+					"begin": "/\\*",
+					"end": "\\*/",
+					"captures":{
+						"0":{
+							"name": "comment.block.hsc"
+						}
+					}
+				},
+				{
+					"name": "comment.line",
+					"begin": "//",
+					"end": "\\n",
+					"captures":{
+						"0":{
+							"name": "comment.line.hsc"
+						}
 					}
 				}
-			}]
+			]
 		},
 		"expression": {
 			"patterns": [
