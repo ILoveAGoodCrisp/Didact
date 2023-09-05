@@ -29,7 +29,7 @@
     ],
     "onEnterRules": [
         {
-        "beforeText": "(\\b(then|else|elseif|repeat)\\b(?=\\s|$)|^[\\t\\s\\n]*\\b(script|local|global)\\b)",
+        "beforeText": "(\\b(if|then|else|elseif|repeat|begin|begin_random)\\b(?=\\s|$)|^[\\t\\s\\n]*\\b(script)\\b)",
         "action": { "indent": "indent" }
         }
     ]

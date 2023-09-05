@@ -1,4 +1,4 @@
-export class HSFunction {
+class HSFunction {
 	constructor(
 		public name: string,
 		public args: string[],
@@ -9,37 +9,37 @@ export class HSFunction {
 
 export var hsFunctions = new Array<HSFunction>();
 
-var newFunc = new HSFunction(
-	"begin",
-	['expression(s)'],
-	"passthrough",
-	"Returns the last expression in a sequence after evaluating the sequence in order",
-);
-hsFunctions.push(newFunc);
+// var newFunc = new HSFunction(
+// 	"begin",
+// 	['expression(s)'],
+// 	"passthrough",
+// 	"Returns the last expression in a sequence after evaluating the sequence in order",
+// );
+// hsFunctions.push(newFunc);
 
-var newFunc = new HSFunction(
-	"begin_random",
-	['expression(s)'],
-	"passthrough",
-	"Evaluates the sequence of expressions in random order and returns the last value evaluated",
-);
-hsFunctions.push(newFunc);
+// var newFunc = new HSFunction(
+// 	"begin_random",
+// 	['expression(s)'],
+// 	"passthrough",
+// 	"Evaluates the sequence of expressions in random order and returns the last value evaluated",
+// );
+// hsFunctions.push(newFunc);
 
-var newFunc = new HSFunction(
-	"begin_count",
-	['expression(s)'],
-	"passthrough",
-	"Evaluates the specified number of expressions in a sequence in random order and returns the last value evaluated",
-);
-hsFunctions.push(newFunc);
+// var newFunc = new HSFunction(
+// 	"begin_count",
+// 	['expression(s)'],
+// 	"passthrough",
+// 	"Evaluates the specified number of expressions in a sequence in random order and returns the last value evaluated",
+// );
+// hsFunctions.push(newFunc);
 
-var newFunc = new HSFunction(
-	"begin_random_count",
-	['expression(s)'],
-	"passthrough",
-	"Evaluates the specified number of expressions in a sequence in random order and returns the last value evaluated",
-);
-hsFunctions.push(newFunc);
+// var newFunc = new HSFunction(
+// 	"begin_random_count",
+// 	['expression(s)'],
+// 	"passthrough",
+// 	"Evaluates the specified number of expressions in a sequence in random order and returns the last value evaluated",
+// );
+// hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"set",

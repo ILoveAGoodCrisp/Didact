@@ -1,14 +1,15 @@
 import * as vscode from 'vscode';
 
 import {hsFunctions} from '../definitions/functions'
+import {hsKeywords} from '../definitions/keywords'
 
 // Provides function completion
 export class hsProvider {
-	functions: vscode.CompletionItem[];
+	items: vscode.CompletionItem[];
 
 	// Generate completion items for the hardcoded functions
 	constructor(extensionPath: string) {
-		this.functions = new Array<vscode.CompletionItem>();
+		this.items = new Array<vscode.CompletionItem>();
 
 		for (var i in hsFunctions) {
 			var func = hsFunctions[i];
@@ -19,7 +20,27 @@ export class hsProvider {
 			item.documentation = func.desc;
 			item.insertText = new vscode.SnippetString(func.name + '(${1})');
 			item.kind = vscode.CompletionItemKind.Function;
-			this.functions.push(item);
+			this.items.push(item);
+		}
+
+		for (var i in hsKeywords) {
+			var keyword = hsKeywords[i];
+
+			var item = new vscode.CompletionItem(keyword.name);
+			if (keyword.name == 'begin_count' || keyword.name == 'begin_random_count')
+			{
+				item.detail = keyword.name + "(long) -> passthrough";
+				item.insertText = new vscode.SnippetString(keyword.name + '(${1})');
+			}
+			else
+			{
+				item.detail = keyword.name + " -> passthrough";
+			}
+
+			item.documentation = keyword.desc;
+			
+			item.kind = vscode.CompletionItemKind.Keyword;
+			this.items.push(item);
 		}
 	}
 
@@ -42,7 +63,7 @@ export class hsProvider {
 				} else {
 					// Otherwise, provide completion items as usual
 					let funcItems: vscode.CompletionItem[] = [];
-					resolve(this.functions.concat(funcItems));
+					resolve(this.items.concat(funcItems));
 				}
 			});
 		}
