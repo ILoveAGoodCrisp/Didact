@@ -7,7 +7,7 @@ import {hsReturnTypes} from '../definitions/returnTypes'
 function return_hover(detail: string, documentation: string)
 {
     const command = `${detail}\n\n${documentation}`;
-    return new vscode.Hover({language: "plaintext", value: command});
+    return new vscode.Hover({language: "hsc", value: command});
 }
 
 export class hsProvider implements vscode.HoverProvider {
@@ -59,7 +59,7 @@ export class hsProvider implements vscode.HoverProvider {
         if (foundFunc != null)
         {
             const joinedArgs = foundFunc.args.join(', ');
-            detail = foundFunc.name + "(" + joinedArgs + ")" + " -> " + foundFunc.r_type;;
+            detail = foundFunc.name + "(" + joinedArgs + ")" + " -> " + foundFunc.r_type;
             documentation = foundFunc.desc;
             return return_hover(detail, documentation);
         }

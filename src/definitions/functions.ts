@@ -1,4 +1,4 @@
-class HSFunction {
+export class HSFunction {
 	constructor(
 		public name: string,
 		public args: string[],
