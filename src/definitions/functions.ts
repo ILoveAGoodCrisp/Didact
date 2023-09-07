@@ -75,7 +75,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"sleep",
-	['short', '[script]'],
+	['short: ticks', 'script: (optional)'],
 	"void",
 	"Pauses execution of this script (or, optionally, another script) for the specified number of ticks",
 );
@@ -83,7 +83,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_sleep",
-	['short', '[script]'],
+	['short: ticks', 'script: (optional)'],
 	"void",
 	"Pauses execution of this script (or, optionally, another script) for the specified number of ticks",
 );
@@ -91,7 +91,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"sleep_forever",
-	['[script]'],
+	['script: (optional)'],
 	"void",
 	"Pauses execution of this script (or, optionally, another script) forever",
 );
@@ -99,7 +99,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"sleep_until",
-	['boolean', '[short]'],
+	['boolean', 'short: ticks to wait between checks', 'long: max sleep time in ticks'],
 	"boolean",
 	"Pauses execution of this script until the specified condition is true, checking once per second unless a different number of ticks is specified. ends after the specified number of ticks if the optional argument is given, otherwise checks forever",
 );
@@ -107,7 +107,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"wake",
-	['script_name'],
+	['string: script_name'],
 	"void",
 	"Wakes a sleeping script in the next update",
 );
@@ -123,7 +123,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"branch",
-	['condition', 'script'],
+	['boolean: condition', 'script'],
 	"void",
 	"Stops executing current script when condition met and starts the script indicated in the parameter",
 );
@@ -339,7 +339,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"pin",
-	['real', 'real', 'real'],
+	['real: 1', 'real: 2', 'real: 3'],
 	"real",
 	"Returns the first value pinned between the second two",
 );
@@ -2291,7 +2291,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"random_range",
-	['short', 'short'],
+	['short: min (inclusive)', 'short: max(exclusive)'],
 	"short",
 	"Returns a random value in the range [lower bound, upper bound]",
 );
@@ -3507,7 +3507,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"object_get_turret",
-	['object', 'short'],
+	['object', 'short: turret index'],
 	"vehicle",
 	"Returns the nth turret attached to the given object",
 );
@@ -3515,7 +3515,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"unit_board_vehicle",
-	['unit', 'string_id'],
+	['unit', 'string_id: vehicle seat name'],
 	"void",
 	"Causes the given unit to attempt to board the named seat",
 );
@@ -4651,9 +4651,9 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_place",
-	['ai'],
+	['ai: squad', 'short: actor_count (optional)'],
 	"void",
-	"Places the specified squad on the map",
+	"Places the specified squad on the map, optionally with the given number of members of the specified squad",
 );
 hsFunctions.push(newFunc);
 
@@ -4665,17 +4665,11 @@ var newFunc = new HSFunction(
 );
 hsFunctions.push(newFunc);
 
-var newFunc = new HSFunction(
-	"ai_place",
-	['ai', 'short'],
-	"void",
-	"Places the given number of members of the specified squad",
-);
 hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_place_in_limbo",
-	['ai'],
+	['ai: squad'],
 	"void",
 	"Places the specified squad on the map in limbo",
 );

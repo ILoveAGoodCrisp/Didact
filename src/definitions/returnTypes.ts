@@ -46,6 +46,12 @@ var newType = new HSReturnType(
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
+	"script",
+	"A compiled script",
+);
+hsReturnTypes.push(newType);
+
+var newType = new HSReturnType(
 	"string_id",
 	"Reference to a tag defined string. Used to point to tag fields",
 );
@@ -59,49 +65,49 @@ hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"trigger_volume",
-	"Pointer to a trigger_volume defined in the scenario",
+	"A trigger_volume defined in the scenario",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"sound_event",
-	"Pointer to a Wwise sound_event",
+	"A Wwise sound_event",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"cutscene_flag",
-	"Pointer to a cutscene_flag defined in the scenario",
+	"A cutscene_flag defined in the scenario",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"cutscene_camera_point",
-	"Pointer to a cutscene_camera_point defined in the scenario",
+	"A cutscene_camera_point defined in the scenario",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"cutscene_title",
-	"Pointer to a cutscene_title defined in the scenario",
+	"A cutscene_title defined in the scenario",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"device_group",
-	"Pointer to a device_group defined in the scenario",
+	"A device_group defined in the scenario",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"ai",
-	"Pointer to one of: a runtime ai object / squad_group / squad / ai_starting_location",
+	"One of: ai_actor / squad_group / squad / ai_starting_location",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"ai_command_script",
-	"Pointer to a compiled ai_command_script",
+	"A compiled ai_command_script",
 );
 hsReturnTypes.push(newType);
 
@@ -113,13 +119,13 @@ hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"ai_line",
-	"Pointer to an ai_line specified in the scenario's ai_mission_dialogue tag",
+	"An ai_line specified in the scenario's ai_mission_dialogue tag",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"starting_profile",
-	"Pointer to a starting_profile defined in the scenario",
+	"A starting_profile defined in the scenario",
 );
 hsReturnTypes.push(newType);
 
@@ -131,25 +137,25 @@ hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"zone_set",
-	"Pointer to a zone_set defined in the scenario tag",
+	"A zone_set defined in the scenario tag",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"designer_zone",
-	"Pointer to a designer_zone defined in the scenario tag",
+	"A designer_zone defined in the scenario tag",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"designer_zone",
-	"Pointer to an ai point_reference defined in the scenario tag. Ai point references are given in the format: point_set_reference.point_reference",
+	"An ai point_reference defined in the scenario tag. Ai point references are given in the format: point_set_reference.point_reference",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"point_set_reference",
-	"Pointer to an ai point_set_reference defined in the scenario tag",
+	"An ai point_set_reference defined in the scenario tag",
 );
 hsReturnTypes.push(newType);
 
@@ -167,43 +173,43 @@ hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"folder",
-	"Pointer to an object folder defined in the scenario",
+	"An object folder defined in the scenario",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"sound",
-	"Pointer to a sound tag",
+	"A sound tag",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"effect",
-	"Pointer to an effect tag",
+	"An effect tag",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"damage",
-	"Pointer to a damage tag",
+	"A damage tag",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"damage",
-	"Pointer to a looping_sound tag",
+	"A looping_sound tag",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"animation_graph",
-	"Pointer to an model_animation_graph tag",
+	"An model_animation_graph tag",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"damage_effect",
-	"Pointer to an damage_effect tag",
+	"An damage_effect tag",
 );
 hsReturnTypes.push(newType);
 
@@ -215,13 +221,13 @@ hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"bitmap",
-	"Pointer to a bitmap tag",
+	"A bitmap tag",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"render_model",
-	"Pointer to a render_model tag",
+	"A render_model tag",
 );
 hsReturnTypes.push(newType);
 
@@ -275,13 +281,13 @@ hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"any_tag",
-	"Pointer to a tag",
+	"A tag",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"any_tag_not_resolving",
-	"Pointer to a tag",
+	"A tag",
 );
 hsReturnTypes.push(newType);
 
@@ -471,85 +477,85 @@ hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"object",
-	"A pointer to a runtime object",
+	"A runtime object",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"unit",
-	"A pointer to a runtime unit",
+	"A runtime unit",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"vehicle",
-	"A pointer to a runtime vehicle",
+	"A runtime vehicle",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"weapon",
-	"A pointer to a runtime weapon",
+	"A runtime weapon",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"device",
-	"A pointer to a runtime device",
+	"A runtime device",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"scenery",
-	"A pointer to a runtime scenery object",
+	"A runtime scenery object",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"effect_scenery",
-	"A pointer to a runtime effect_scenery object",
+	"A runtime effect_scenery object",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"object_name",
-	"A pointer to an object_name defined in the scenario",
+	"An object_name defined in the scenario",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"unit_name",
-	"A pointer to a unit_name defined in the scenario",
+	"A unit_name defined in the scenario",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"vehicle_name",
-	"A pointer to a vehicle_name defined in the scenario",
+	"A vehicle_name defined in the scenario",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"vehicle_name",
-	"A pointer to a weapon_name defined in the scenario",
+	"A weapon_name defined in the scenario",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"device_name",
-	"A pointer to a device_name defined in the scenario",
+	"A device_name defined in the scenario",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"scenery_name",
-	"A pointer to a scenery_name defined in the scenario",
+	"A scenery_name defined in the scenario",
 );
 hsReturnTypes.push(newType);
 
 var newType = new HSReturnType(
 	"effect_scenery_name",
-	"A pointer to a effect_scenery_name defined in the scenario",
+	"A effect_scenery_name defined in the scenario",
 );
 hsReturnTypes.push(newType);
 

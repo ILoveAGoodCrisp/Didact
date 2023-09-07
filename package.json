@@ -9,13 +9,12 @@
     "categories": [
         "Programming Languages"
     ],
-
     "main": "./out/extension",
     "contributes": {
         "commands": [
             {
-              "command": "didact.compileScenarioScripts",
-              "title": "Compile Scenario Scripts"
+                "command": "didact.compileScenarioScripts",
+                "title": "Compile Scenario Scripts"
             }
         ],
         "keybindings": [
@@ -24,13 +23,13 @@
                 "command": "didact.compileScenarioScripts",
                 "when": "editorTextFocus"
             }
-        ],        
+        ],
         "menus": {
             "commandPalette": [
-              {
-                "command": "didact.compileScenarioScripts",
-                "when": "editorLangId == hsc"
-              }
+                {
+                    "command": "didact.compileScenarioScripts",
+                    "when": "editorLangId == hsc"
+                }
             ]
         },
         "languages": [
