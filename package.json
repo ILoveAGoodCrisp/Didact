@@ -12,6 +12,27 @@
 
     "main": "./out/extension",
     "contributes": {
+        "commands": [
+            {
+              "command": "didact.compileScenarioScripts",
+              "title": "Compile Scenario Scripts"
+            }
+        ],
+        "keybindings": [
+            {
+                "key": "ctrl+shift+c",
+                "command": "didact.compileScenarioScripts",
+                "when": "editorTextFocus"
+            }
+        ],        
+        "menus": {
+            "commandPalette": [
+              {
+                "command": "didact.compileScenarioScripts",
+                "when": "editorLangId == hsc"
+              }
+            ]
+        },
         "languages": [
             {
                 "id": "hsc",
@@ -30,6 +51,12 @@
                 "language": "hsc",
                 "scopeName": "source.hsc",
                 "path": "./syntaxes/hsc.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "hsc",
+                "path": "./snippets.json"
             }
         ]
     },

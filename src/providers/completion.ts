@@ -2,6 +2,10 @@ import * as vscode from 'vscode';
 
 import {hsFunctions} from '../definitions/functions'
 import {hsKeywords} from '../definitions/keywords'
+import {hsScriptTypes} from '../definitions/scriptTypes'
+import {hsReturnTypes} from '../definitions/returnTypes'
+
+const return_types_temp = "${2}|void|short|real|ai"
 
 // Provides function completion
 export class hsProvider {
@@ -40,6 +44,25 @@ export class hsProvider {
 			item.documentation = keyword.desc;
 			
 			item.kind = vscode.CompletionItemKind.Keyword;
+			this.items.push(item);
+		}
+
+		for (var i in hsScriptTypes) {
+			var scriptType = hsScriptTypes[i];
+
+			var item = new vscode.CompletionItem(scriptType.name);
+			item.detail = "Script Type: " + scriptType.name
+			item.documentation = scriptType.desc;
+			item.kind = vscode.CompletionItemKind.Class;
+			this.items.push(item);
+		}
+		for (var i in hsReturnTypes) {
+			var returnType = hsReturnTypes[i];
+
+			var item = new vscode.CompletionItem(returnType.name);
+			item.detail = returnType.name
+			item.documentation = returnType.desc;
+			item.kind = vscode.CompletionItemKind.Property;
 			this.items.push(item);
 		}
 	}

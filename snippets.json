@@ -1,0 +1,77 @@
+{
+    "startup": {
+		"prefix": "startup",
+		"body": [
+			"script startup ${1|script_name|}()", "\t$0", "end"
+		],
+		"description": "Generates an empty startup script"
+	},
+    "dormant": {
+		"prefix": "dormant",
+		"body": [
+			"script dormant ${1|script_name|}()", "\t$0", "end"
+		],
+		"description": "Generates an empty dormant script"
+	},
+    "continuous": {
+		"prefix": "continuous",
+		"body": [
+			"script continuous ${1|script_name|}()", "\t$0", "end"
+		],
+		"description": "Generates an empty continuous script"
+	},
+    "command_script": {
+		"prefix": "command_script",
+		"body": [
+			"script continuous ${1|script_name|}()", "\t$0", "end"
+		],
+		"description": "Generates an empty command script"
+	},
+    "static": {
+		"prefix": "static",
+		"body": [
+			"script static ${1|void,boolean,real,short,long,string,script,string_id,unit_seat_mapping,trigger_volume,sound_event,cutscene_flag,cutscene_camera_point,cutscene_title,device_group,ai,ai_command_script,ai_behavior,ai_line,starting_profile,player,zone_set,designer_zone,point_reference,point_set_reference,style,object_list,folder,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,bitmap,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,team,mp_team,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model,passthrough|} ${2|script_name|}()", "\t$0", "end"
+		],
+		"description": "enerates an empty static script"
+	},
+    "stub": {
+		"prefix": "stub",
+		"body": [
+			"script static ${1|void,boolean,real,short,long,string,script,string_id,unit_seat_mapping,trigger_volume,sound_event,cutscene_flag,cutscene_camera_point,cutscene_title,device_group,ai,ai_command_script,ai_behavior,ai_line,starting_profile,player,zone_set,designer_zone,point_reference,point_set_reference,style,object_list,folder,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,bitmap,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,team,mp_team,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model,passthrough|} ${2|script_name|}()", "\t$0", "end"
+		],
+		"description": "Generates an empty stub script"
+	},
+    "static-w/parameter": {
+		"prefix": "static-w/parameter",
+		"body": [
+			"script static ${1|void,boolean,real,short,long,string,script,string_id,unit_seat_mapping,trigger_volume,sound_event,cutscene_flag,cutscene_camera_point,cutscene_title,device_group,ai,ai_command_script,ai_behavior,ai_line,starting_profile,player,zone_set,designer_zone,point_reference,point_set_reference,style,object_list,folder,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,bitmap,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,team,mp_team,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model,passthrough|} ${2|script_name|}(${3|void,boolean,real,short,long,string,script,string_id,unit_seat_mapping,trigger_volume,sound_event,cutscene_flag,cutscene_camera_point,cutscene_title,device_group,ai,ai_command_script,ai_behavior,ai_line,starting_profile,player,zone_set,designer_zone,point_reference,point_set_reference,style,object_list,folder,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,bitmap,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,team,mp_team,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model,passthrough|} ${4|parameter_name|})", "\t$0", "end"
+		],
+		"description": "Generates an empty static script"
+	},
+    "stub-w/parameter": {
+		"prefix": "stub-w/parameter",
+		"body": [
+			"script stub ${1|void,boolean,real,short,long,string,script,string_id,unit_seat_mapping,trigger_volume,sound_event,cutscene_flag,cutscene_camera_point,cutscene_title,device_group,ai,ai_command_script,ai_behavior,ai_line,starting_profile,player,zone_set,designer_zone,point_reference,point_set_reference,style,object_list,folder,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,bitmap,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,team,mp_team,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model,passthrough|} ${2|script_name|}(${3|void,boolean,real,short,long,string,script,string_id,unit_seat_mapping,trigger_volume,sound_event,cutscene_flag,cutscene_camera_point,cutscene_title,device_group,ai,ai_command_script,ai_behavior,ai_line,starting_profile,player,zone_set,designer_zone,point_reference,point_set_reference,style,object_list,folder,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,bitmap,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,team,mp_team,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model,passthrough|} ${4|parameter_name|})", "\t$0", "end"
+		],
+		"description": "Generates an empty stub script"
+	},
+	"global": {
+		"prefix": "global",
+		"body": [
+			"global ${1|boolean,real,short,long,string,script,string_id,unit_seat_mapping,trigger_volume,sound_event,cutscene_flag,cutscene_camera_point,cutscene_title,device_group,ai,ai_command_script,ai_behavior,ai_line,starting_profile,player,zone_set,designer_zone,point_reference,point_set_reference,style,object_list,folder,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,bitmap,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,team,mp_team,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model,passthrough|} ${2|name|} ${3|false,true,none,0|};"
+		]
+	},
+	"local": {
+		"prefix": "local",
+		"body": [
+			"global ${1|boolean,real,short,long,string,script,string_id,unit_seat_mapping,trigger_volume,sound_event,cutscene_flag,cutscene_camera_point,cutscene_title,device_group,ai,ai_command_script,ai_behavior,ai_line,starting_profile,player,zone_set,designer_zone,point_reference,point_set_reference,style,object_list,folder,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,bitmap,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,team,mp_team,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model,passthrough|} ${2|name|} ${3|false,true,none,0|};"
+		]
+	},
+	"loop": {
+		"prefix": "loop",
+		"body": [
+			"repeat", "\t${0}", "until(${1|false|}, ${3|1|});"
+		],
+		"description": "TEMPLATE - Generates an template loop"
+	}
+}
