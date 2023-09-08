@@ -28,16 +28,16 @@
             "commandPalette": [
                 {
                     "command": "didact.compileScenarioScripts",
-                    "when": "editorLangId == hsc"
+                    "when": "editorLangId == midnightScript"
                 }
             ]
         },
         "languages": [
             {
-                "id": "hsc",
+                "id": "midnightScript",
                 "aliases": [
-                    "HaloScript (Didact)",
-                    "hsc"
+                    "HaloScript (Midnight)",
+                    "hsc4"
                 ],
                 "extensions": [
                     ".hsc"
@@ -47,15 +47,16 @@
         ],
         "grammars": [
             {
-                "language": "hsc",
+                "language": "midnightScript",
                 "scopeName": "source.hsc",
                 "path": "./syntaxes/hsc.tmLanguage.json"
             }
         ],
         "snippets": [
             {
-                "language": "hsc",
-                "path": "./snippets.json"
+                "scope": "midnightScript",
+                "language": "midnightScript",
+                "path": "./snippets/midnight.json"
             }
         ]
     },

@@ -22,7 +22,12 @@ export class hsProvider {
 			const joinedArgs = func.args.join(', ');
 			item.detail = func.name + "(" + joinedArgs + ")" + " -> " + func.r_type;
 			item.documentation = func.desc;
+			item.insertText = new vscode.SnippetString(func.name + '(${1})');
 			item.kind = vscode.CompletionItemKind.Function;
+			item.command = {
+				command: 'triggerSignatureHelp',
+				title: 'Trigger Signature Help',
+			};
 			this.items.push(item);
 		}
 
@@ -33,6 +38,7 @@ export class hsProvider {
 			if (keyword.name == 'begin_count' || keyword.name == 'begin_random_count')
 			{
 				item.detail = keyword.name + "(long) -> passthrough";
+				item.insertText = new vscode.SnippetString(keyword.name + '(${1})');
 			}
 			else
 			{
