@@ -4,7 +4,7 @@ import {hsReturnTypes} from '../definitions/returnTypes'
 
 function getSignatureInformation(hsFunction: HSFunction, argIndex: number): vscode.SignatureInformation {
     const signature = new vscode.SignatureInformation("", "");
-    signature.parameters = hsFunction.args.map(arg => new vscode.ParameterInformation(arg, "(" + argIndex + ")" + ": " + hsReturnTypes.find((def) => def.name === arg.split(':')[0])?.desc));
+    signature.parameters = hsFunction.args.map(arg => new vscode.ParameterInformation(arg, (argIndex + 1) + ": " + hsReturnTypes.find((def) => def.name === arg.split(':')[0])?.desc));
     signature.documentation = "Function: " + hsFunction.desc;
     const joinedArgs = hsFunction.args.join(', ');
     signature.label = hsFunction.name + "(" + joinedArgs + ")" + " -> " + hsFunction.r_type;
